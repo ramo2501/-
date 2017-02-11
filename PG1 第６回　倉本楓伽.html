@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+  <html lang="ja">
+   <head>
+     <script>
+       
+var counter = 0;
+function AddRows(){
+
+    counter++;
+
+    var table = document.getElementById("table1");
+    var row1 = table1.insertRow(-1);
+    var cell1 = row1.insertCell(0);
+    var cell2 = row1.insertCell(1);
+    var cell3 = row1.insertCell(2);
+
+    cell1.className = 'name';
+    cell2.className = 'rowName';
+    cell3.className = 'nextName';
+
+    var HTML1 = counter+2;
+    var HTML2 = '<input type="text" name="rowName' + counter + '" value="" size="15" maxlength="30"/>';
+    var HTML3 = '<input type="text" name="nextName' + counter + '" value="" size="15" maxlength="30"/>';
+    cell1.innerHTML = HTML1;
+    cell2.innerHTML = HTML2;
+    cell3.innerHTML = HTML3;
+}
+function AddColumn() {
+    
+    var table = document.getElementById("table1");
+    
+    var rows = table.rows.length;
+     
+    
+    for ( var i = 0; i < rows; i++) {
+        var cell4 = table.rows[i].insertCell(-1);
+        cell4.className = 'againName';
+   var HTML4 = '<input type="text" name="againName" value="" size="15" maxlength="30" />';
+   cell4.innerHTML = HTML4;
+    }
+
+
+
+}
+
+
+     </script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="Excel.css">
+  </head>
+<body>
+   <input type="button" value="行を追加" onclick="AddRows();">
+   <input type="button" value="列を追加" onclick="AddColumn();">
+
+ <table border="1" cellspacing="0" cellpadding="4" id="table1">
+  <tr>
+    <th class=top-column></th>
+    <th class=top-column>A</th>
+    <th class=top-column>B</th>
+  </tr>
+  <tr>
+    <td class=row_1>1</td>
+    <td class="name"><input type="text" name="name0" value="" size="15" maxlength="30" /></td>
+    <td class="address"><input type="text" name="address0" value="" size="15" maxlength="30" /></td>
+  </tr>
+  <tr>
+    <td class=row_1>2</td>
+    <td class="name"><input type="text" name="name0" value="" size="15" maxlength="30" /></td>
+    <td class="address"><input type="text" name="address0" value="" size="15" maxlength="30" /></td>
+  </tr>
+</table>
+   </body>
+ </html>
